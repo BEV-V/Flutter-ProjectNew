@@ -14,4 +14,15 @@ class User {
     required this.cell,
     required this.imageUrl,
   });
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      gender: json['gender'] ?? '',
+      email: json['email'] ?? '',
+      phone: json['phone'] ?? '',
+      nat: json['nat'] ?? '',
+      cell: json['cell'] ?? '',
+      imageUrl: json['picture']?['thumbnail'] ?? '',
+    );
+  }
 }
